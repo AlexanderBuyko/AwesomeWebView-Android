@@ -1010,7 +1010,7 @@ public class AwesomeWebView {
             show(url, null);
         }
 
-        protected void show(String url, String data) {
+        public void show(String url, String data) {
             this.url = url;
             this.data = data;
             this.key = System.identityHashCode(this);
