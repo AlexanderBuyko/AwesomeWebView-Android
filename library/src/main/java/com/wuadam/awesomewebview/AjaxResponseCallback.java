@@ -1,8 +1,8 @@
 package com.wuadam.awesomewebview;
 
-import java.io.Serializable;
+import android.os.Parcelable;
 
-public interface AjaxResponseCallback extends Serializable {
+public interface AjaxResponseCallback extends Parcelable {
     void onAjaxSuccess(String host, String url, String html);
 
     void onAjaxError(String host, String url, int errorCode);
