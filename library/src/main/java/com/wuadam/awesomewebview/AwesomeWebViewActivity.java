@@ -233,6 +233,8 @@ public class AwesomeWebViewActivity extends AppCompatActivity
     protected String FILE_TYPE = "*/*";
 
     protected String injectJavaScript;
+    protected Object javaScriptInterface;
+    protected String javaScriptInterfaceName;
     protected Boolean injectJavaScriptMainPage;
 
     protected Map<String, Map<String, String>> injectCookies;
@@ -488,6 +490,8 @@ public class AwesomeWebViewActivity extends AppCompatActivity
         webViewAudioEnabled = builder.webViewAudioEnabled != null ? builder.webViewAudioEnabled : true;
 
         injectJavaScript = builder.injectJavaScript;
+        javaScriptInterface = builder.javaScriptInterface;
+        javaScriptInterfaceName = builder.javaScriptInterfaceName;
         injectJavaScriptMainPage = builder.injectJavaScriptMainPage != null ? builder.injectJavaScriptMainPage : true;
         extraHeadersMainPage = builder.extraHeadersMainPage != null ? builder.extraHeadersMainPage : true;
         injectCookies = builder.injectCookies;
@@ -631,7 +635,7 @@ public class AwesomeWebViewActivity extends AppCompatActivity
         }
     }
 
-    @SuppressLint("SetJavaScriptEnabled")
+    @SuppressLint({"SetJavaScriptEnabled", "JavascriptInterface", "AddJavascriptInterface"})
     protected void initializeViews() {
         if (! toolbarVisible) {
             setSupportActionBar(toolbar);
@@ -707,6 +711,7 @@ public class AwesomeWebViewActivity extends AppCompatActivity
             webChromeClient = buildWebChromeClient();
             webViewClient = buildWebViewClient();
 
+            webView.addJavascriptInterface(javaScriptInterface, javaScriptInterfaceName);
             webView.setWebChromeClient(webChromeClient);
             webView.setWebViewClient(webViewClient);
             webView.setDownloadListener(downloadListener);
