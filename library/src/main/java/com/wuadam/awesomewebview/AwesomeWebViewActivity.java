@@ -635,7 +635,7 @@ public class AwesomeWebViewActivity extends AppCompatActivity
         }
     }
 
-    @SuppressLint({"SetJavaScriptEnabled", "JavascriptInterface", "AddJavascriptInterface"})
+    @SuppressLint({"SetJavaScriptEnabled", "JavascriptInterface"})
     protected void initializeViews() {
         if (! toolbarVisible) {
             setSupportActionBar(toolbar);
