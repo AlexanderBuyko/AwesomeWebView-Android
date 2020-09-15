@@ -233,7 +233,7 @@ public class AwesomeWebViewActivity extends AppCompatActivity
     protected String FILE_TYPE = "*/*";
 
     protected String injectJavaScript;
-    protected Object javaScriptInterface;
+    protected AjaxResponseCallback javaScriptInterface;
     protected String javaScriptInterfaceName;
     protected Boolean injectJavaScriptMainPage;
 

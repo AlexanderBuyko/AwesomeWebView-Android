@@ -171,7 +171,7 @@ public class AwesomeWebView {
         protected Boolean webViewAudioEnabled;
 
         protected String injectJavaScript;
-        protected Object javaScriptInterface;
+        protected AjaxResponseCallback javaScriptInterface;
         protected String javaScriptInterfaceName;
         protected Boolean injectJavaScriptMainPage;
 
@@ -967,7 +967,7 @@ public class AwesomeWebView {
                     "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0");
         }
 
-        public Builder injectJavaScriptInterface(Object obj, String interfaceName) {
+        public Builder injectJavaScriptInterface(AjaxResponseCallback obj, String interfaceName) {
             this.javaScriptInterface = obj;
             this.javaScriptInterfaceName = interfaceName;
             return this;
